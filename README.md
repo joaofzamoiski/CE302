@@ -1,4 +1,4 @@
 # CE302
 Elementos de Programação para Estatística
 
-Lorem Ipsum
+Lorem Ipsum.
