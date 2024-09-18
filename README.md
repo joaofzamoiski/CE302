@@ -8,4 +8,4 @@ Horário e Local:
 Quarta-feiras das 17h30 às 20h30
 Sala: DINF - Laboratórios 1/2
 
-Deu certo de novo sla
+Deu certo de novo sla.
