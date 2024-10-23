@@ -19,20 +19,20 @@ meu_data_frame <- data.frame(
   salario = c(5000, 6000, 5500, 8000, 2000, 3500, 10000, 3800 ), 
   meio_de_transporte = c('onibus', 'bicicleta', 'onibus', 'carro', 'carro', 'onibus', 'onibus', 'bicicleta'))
 
+##################################################################################################################
+
 require(magrittr) # PARA USAR O PIPE
 
 meu_data_frame = meu_data_frame %>%
   mutate(idade_25 = idade > 25)
 
+meu_data_frame %<>% 
+  mutate(idade_50 = idade > 50)
 
 
+glimpse(meu_data_frame)
 
-
-
-
-
-
-
+#####################################################################
 
 require(dplyr)
 require(tidyr)
@@ -44,9 +44,29 @@ car_crash = fread("/home/est/jfz24/CE302/data/Brazil Total highway crashes 2010 
 glimpse(car_crash)
 View(car_crash)
 
-meu_data_frame %<>% 
-  mutate(idade_50 = idade > 50)
+
+car_crash %>%
+  select(moto,
+         starts_with("tr"),
+         ends_with("feridos"))
 
 
-glimpse(meu_data_frame)
+car_crash %>%
+  select(moto, automovel, data) %>%
+  filter(moto > 2 & automovel == 2)
+
+car_crash %>%
+    group_by(tipo_de_ocorrencia) %>%
+    summarise(media = mean(automovel, nr.rm = T),
+              n = n()) %>% View
+
+
+
+
+
+
+
+
+
+
 
